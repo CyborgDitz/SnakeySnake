@@ -5,4 +5,5 @@
 
 void drawBoard(void);
 void drawSnake(Snake *snake);
+void drawFood(Food *food);
 #endif //DRAW_H

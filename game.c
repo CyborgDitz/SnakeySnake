@@ -10,10 +10,10 @@ void gridBoundary(Snake *snake) {
 
 void movePlayer(Snake *snake)
 {
-        if (IsKeyPressed(KEY_A)) snake->position.x -= CELL_SIZE;
-        if (IsKeyPressed(KEY_D)) snake->position.x += CELL_SIZE;
-        if (IsKeyPressed(KEY_W)) snake->position.y -= CELL_SIZE;
-        if (IsKeyPressed(KEY_S)) snake->position.y += CELL_SIZE;
+    if (IsKeyPressed(KEY_A)) snake->position.x -= CELL_SIZE;
+    if (IsKeyPressed(KEY_D)) snake->position.x += CELL_SIZE;
+    if (IsKeyPressed(KEY_W)) snake->position.y -= CELL_SIZE;
+    if (IsKeyPressed(KEY_S)) snake->position.y += CELL_SIZE;
     gridBoundary(snake);
 }
 
@@ -23,4 +23,11 @@ Snake InitSnake() {
     snake.position.x = SCREEN_WIDTH / 2;
     snake.position.y = SCREEN_HEIGHT / 2;
     return snake;
+}
+Food InitRandomFood() {
+    Food food;
+    food.position.x = GetRandomValue(0, GRID_WIDTH - 1) * CELL_SIZE;
+    food.position.y = GetRandomValue(0, GRID_HEIGHT - 1) * CELL_SIZE;
+
+    return food;
 }
