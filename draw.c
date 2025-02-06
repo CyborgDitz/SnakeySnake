@@ -3,7 +3,7 @@
 #include "raylib.h"
 
 
-void drawBoard(void) {
+void DrawBoard(void) {
     ClearBackground(RAYWHITE);
     for (int x = 0; x < SCREEN_WIDTH; x += CELL_SIZE) {
         for (int y = 0; y < SCREEN_HEIGHT; y += CELL_SIZE) {
@@ -17,9 +17,9 @@ void drawBoard(void) {
     }
 }
 
-void drawSnake(Snake *snake) {
-    DrawRectangle(snake->position.x, snake->position.y, CELL_SIZE, CELL_SIZE, PINK);
+void DrawSnake(Snake *snake) {
+    DrawRectangle(snake->position[0].x, snake->position[0].y, CELL_SIZE, CELL_SIZE, PINK);
 }
-void drawFood(Food *food) {
+void DrawFood(Food *food) {
     DrawRectangle(food->position.x, food->position.y, CELL_SIZE, CELL_SIZE, RED);
 }

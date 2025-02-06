@@ -26,7 +26,6 @@ else()
 endif()
 
 add_executable(SnakeySnake main.c
-        gaym_grid.cpp
         draw.c
         game.c)
 

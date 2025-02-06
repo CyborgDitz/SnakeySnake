@@ -12,10 +12,10 @@ InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Snake Game");
 
 while (!WindowShouldClose()) {
     BeginDrawing();
-        drawBoard();
+        DrawBoard();
         SnakeEatsFood(&snake, &food);
-        drawSnake(&snake);
-        drawFood(&food);
+        DrawSnake(&snake);
+        DrawFood(&food);
     EndDrawing();
 
     MoveSnake(&snake);
