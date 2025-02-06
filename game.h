@@ -23,9 +23,11 @@ typedef struct {
     Position position;
 } Food;
 
-void movePlayer(Snake *snake);
-Snake InitSnake(void);
-Food InitRandomFood(void);
+void MoveSnake(Snake *snake);
+void SnakeEatsFood(Snake *snake, Food *food);
+
+Snake InitSnake();
+Food InitRandomFood();
 
 
 #endif //GAME_H

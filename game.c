@@ -8,7 +8,7 @@ void gridBoundary(Snake *snake) {
     if (snake->position.y >= SCREEN_HEIGHT) snake->position.y = SCREEN_HEIGHT - CELL_SIZE;
 }
 
-void movePlayer(Snake *snake)
+void MoveSnake(Snake *snake)
 {
     if (IsKeyPressed(KEY_A)) snake->position.x -= CELL_SIZE;
     if (IsKeyPressed(KEY_D)) snake->position.x += CELL_SIZE;
@@ -16,7 +16,11 @@ void movePlayer(Snake *snake)
     if (IsKeyPressed(KEY_S)) snake->position.y += CELL_SIZE;
     gridBoundary(snake);
 }
-
+void SnakeEatsFood(Snake *snake, Food *food) {
+    if (snake->position.x == food->position.x && snake->position.y == food->position.y) {
+        *food = InitRandomFood();
+    }
+}
 //todo improve move boundary later
 Snake InitSnake() {
     Snake snake;
