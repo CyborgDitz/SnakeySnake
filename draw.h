@@ -1,6 +1,5 @@
 #ifndef DRAW_H
 #define DRAW_H
-#include "raylib.h"
 #include "game.h"
 
 void DrawBoard(void);

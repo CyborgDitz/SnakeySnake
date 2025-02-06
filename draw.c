@@ -18,8 +18,38 @@ void DrawBoard(void) {
 }
 
 void DrawSnake(Snake *snake) {
-    DrawRectangle(snake->position[0].x, snake->position[0].y, CELL_SIZE, CELL_SIZE, PINK);
+    for (int i = 0; i < snake->length; i++) {
+        if (i == 0) {
+            DrawRectangle(snake->position[i].x,
+                          snake->position[i].y,
+                          CELL_SIZE,
+                          CELL_SIZE,
+                          PINK);
+            float eyeRadius = CELL_SIZE / 8.0f;
+            float offsetX = CELL_SIZE / 4.0f;
+            float offsetY = CELL_SIZE / 4.0f;
+            DrawCircle(snake->position[i].x + offsetX,
+                       snake->position[i].y + offsetY,
+                       eyeRadius,
+                       BLACK);
+
+            DrawCircle(snake->position[i].x + CELL_SIZE - offsetX,
+                       snake->position[i].y + offsetY,
+                       eyeRadius,
+                       BLACK);
+        } else {
+            DrawRectangle(snake->position[i].x,
+                          snake->position[i].y,
+                          CELL_SIZE,
+                          CELL_SIZE,
+                          PINK);
+        }
+        printf("Segment %d at (%d, %d)\n", i,
+               (int)snake->position[i].x, (int)snake->position[i].y);
+    }
 }
+
+
 void DrawFood(Food *food) {
     DrawRectangle(food->position.x, food->position.y, CELL_SIZE, CELL_SIZE, RED);
 }
